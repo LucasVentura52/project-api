@@ -12,11 +12,14 @@
                     prepend-inner-icon="mdi-email" variant="outlined" density="comfortable" />
                 <v-text-field v-model="senha" label="Senha" type="password" :rules="[rules.required]"
                     prepend-inner-icon="mdi-lock" variant="outlined" density="comfortable" />
-                <v-btn color="primary" type="submit" block class="mt-4" size="large">
+                <v-btn color="primary" type="submit" block class="mt-4" size="large" :loading="loading"
+                    :disabled="loading">
                     Entrar
                 </v-btn>
 
-                <v-btn variant="text" block class="mt-2 text-decoration-underline" @click="router.push('/cadastrar')">
+
+                <v-btn type="submit" variant="text" block class="mt-2 text-decoration-underline"
+                    @click="router.push('/cadastrar')">
                     Criar uma conta
                 </v-btn>
             </v-form>
@@ -29,7 +32,7 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAuthController } from '@/controllers/AuthController'
 
-const { email, senha, erro, login } = useAuthController()
+const { email, senha, erro, login, loading } = useAuthController()
 const router = useRouter()
 const valid = ref(false)
 const formRef = ref()

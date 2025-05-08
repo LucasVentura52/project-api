@@ -9,11 +9,13 @@ export function useRegisterController() {
   const senhaConfirmada = ref("");
   const erro = ref("");
   const router = useRouter();
+  const loading = ref(false);
 
   const register = async () => {
     erro.value = "";
+    loading.value = true;
     try {
-      const dados = await AuthService.register({
+      await AuthService.register({
         email: email.value,
         senha: senha.value,
         senhaConfirmada: senhaConfirmada.value,
@@ -22,8 +24,10 @@ export function useRegisterController() {
       alert.success("Cadastro realizado com sucesso!");
       router.push("/login");
     } catch (e: any) {
-      erro.value = e;
       alert.error(e);
+      erro.value = e;
+    } finally {
+      loading.value = false;
     }
   };
 
@@ -33,5 +37,6 @@ export function useRegisterController() {
     senhaConfirmada,
     erro,
     register,
+    loading,
   };
 }

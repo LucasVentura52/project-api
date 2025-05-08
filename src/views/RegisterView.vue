@@ -15,11 +15,13 @@
                 <v-text-field v-model="senhaConfirmada" label="Confirmar Senha" type="password"
                     :rules="[rules.required, rules.confirmacao]" prepend-inner-icon="mdi-lock-check" variant="outlined"
                     density="comfortable" />
-                <v-btn color="success" type="submit" block class="mt-4" size="large">
+                <v-btn :loading="loading" :disabled="loading" color="success" type="submit" block class="mt-4"
+                    size="large">
                     Cadastrar
                 </v-btn>
 
-                <v-btn variant="text" block class="mt-2 text-decoration-underline" @click="$router.push('/login')">
+                <v-btn type="submit" variant="text" block class="mt-2 text-decoration-underline"
+                    @click="$router.push('/login')">
                     Já tenho conta
                 </v-btn>
             </v-form>
@@ -47,7 +49,8 @@ const {
     senha,
     senhaConfirmada,
     erro,
-    register
+    register,
+    loading
 } = useRegisterController()
 
 const formRef = ref()
