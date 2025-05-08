@@ -26,8 +26,8 @@ export function useAuthController() {
         })
       );
 
+      await router.push("/boas-vindas");
       alert.success("Login realizado com sucesso!");
-      router.push("/boas-vindas");
     } catch (e: any) {
       alert.error(e);
       erro.value = e;

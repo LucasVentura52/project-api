@@ -1,15 +1,42 @@
-import Swal from "sweetalert2";
+import Swal from 'sweetalert2'
+
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top',
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  showCloseButton: true,
+  customClass: {
+    popup: 'custom-toast'
+  }
+})
 
 export const alert = {
-  success: (message: string, title = "Sucesso") =>
-    Swal.fire({ icon: "success", title, text: message }),
+  success: (message: string) =>
+    Toast.fire({
+      icon: 'success',
+      title: message,
+      customClass: {
+        popup: 'toast-success'
+      }
+    }),
 
-  error: (message: string, title = "Erro") =>
-    Swal.fire({ icon: "error", title, text: message }),
+  error: (message: string) =>
+    Toast.fire({
+      icon: 'error',
+      title: message,
+      customClass: {
+        popup: 'toast-error'
+      }
+    }),
 
-  warning: (message: string, title = "Atenção") =>
-    Swal.fire({ icon: "warning", title, text: message }),
-
-  info: (message: string, title = "Informação") =>
-    Swal.fire({ icon: "info", title, text: message }),
-};
+  warning: (message: string) =>
+    Toast.fire({
+      icon: 'warning',
+      title: message,
+      customClass: {
+        popup: 'toast-warning'
+      }
+    })
+}
