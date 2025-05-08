@@ -18,6 +18,15 @@ Este projeto é uma aplicação web com login, cadastro e tela de boas-vindas, u
 - [SweetAlert2](https://sweetalert2.github.io/)
 - [Docker](https://www.docker.com/)
 
+## Clonando o repositório
+
+Para obter uma cópia do projeto em sua máquina local, use o comando abaixo:
+
+```bash
+git clone https://github.com/LucasVentura52/project-api.git
+cd project-api
+```
+
 ## Rodando localmente
 
 ```bash
