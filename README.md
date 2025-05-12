@@ -60,3 +60,9 @@ Depois, acesse [http://localhost:8080](http://localhost:8080)
 ## Autor
 
 Lucas Ventura
+
+
+## Contato
+
+- 📸 [Instagram](https://www.instagram.com/lucas_ventura__/)
+- 💼 [LinkedIn](https://www.linkedin.com/in/lucas-ventura-99984b281/)
