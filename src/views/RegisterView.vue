@@ -15,8 +15,8 @@
                 <v-text-field class="mt-2" v-model="senhaConfirmada" label="Confirmar Senha" type="password"
                     :rules="[rules.required, rules.confirmacao]" prepend-inner-icon="mdi-lock-check" variant="outlined"
                     density="comfortable" />
-                <v-btn :loading="loading" :disabled="loading" color="success" type="submit" block class="mt-4"
-                    size="large">
+                <v-btn :loading="loading" :disabled="loading || !podeCadastrar" color="success" type="submit" block
+                    class="mt-4" size="large">
                     Cadastrar
                 </v-btn>
 
@@ -61,4 +61,14 @@ const rules = {
     email: (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) || 'E-mail inválido',
     confirmacao: (v: string) => v === senha.value || 'As senhas não coincidem'
 }
+
+const podeCadastrar = computed(() => {
+    return (
+        email.value.trim() !== '' &&
+        senha.value.trim() !== '' &&
+        senhaConfirmada.value.trim() !== '' &&
+        senha.value === senhaConfirmada.value &&
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)
+    )
+})
 </script>
