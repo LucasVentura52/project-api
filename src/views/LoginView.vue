@@ -16,8 +16,12 @@
                     class="mt-4" size="large">
                     Entrar
                 </v-btn>
-            </v-form>
 
+                <v-btn type="submit" variant="text" block class="mt-2 text-decoration-underline"
+                    @click="router.push('/cadastrar')">
+                    Criar uma conta
+                </v-btn>
+            </v-form>
         </v-card>
     </v-container>
 </template>

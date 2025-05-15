@@ -10,7 +10,7 @@ export const AuthService = {
       const response = await AuthRepository.login(payload);
       return response.data;
     } catch (error: any) {
-      throw error.response?.data?.mensagem || "Erro ao autenticar";
+      throw error.response?.data?.mensagem || "Usuário ou senha inválidos!";
     }
   },
 
@@ -25,7 +25,7 @@ export const AuthService = {
         throw mensagens;
       }
 
-      throw error.response?.data || "Erro ao cadastrar";
+      throw error.response?.data || "Erro inespeado ao cadastrar.";
     }
   },
 };
