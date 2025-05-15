@@ -10,19 +10,14 @@
             <v-form @submit.prevent="login" ref="formRef" v-model="valid">
                 <v-text-field v-model="email" label="Email" type="email" :rules="[rules.required, rules.email]"
                     prepend-inner-icon="mdi-email" variant="outlined" density="comfortable" />
-                <v-text-field class="mt-2" v-model="senha" label="Senha" type="password" :rules="[rules.required]"
+                <v-text-field v-model="senha" class="mt-2" label="Senha" type="password" :rules="[rules.required]"
                     prepend-inner-icon="mdi-lock" variant="outlined" density="comfortable" />
-                <v-btn color="primary" type="submit" block class="mt-4" size="large" :loading="loading"
-                    :disabled="loading">
+                <v-btn :loading="loading" :disabled="loading || !podeLogar" color="primary" type="submit" block
+                    class="mt-4" size="large">
                     Entrar
                 </v-btn>
-
-
-                <v-btn type="submit" variant="text" block class="mt-2 text-decoration-underline"
-                    @click="router.push('/cadastrar')">
-                    Criar uma conta
-                </v-btn>
             </v-form>
+
         </v-card>
     </v-container>
 </template>
@@ -41,6 +36,14 @@ const rules = {
     required: (v: string) => !!v || 'Campo obrigatório',
     email: (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) || 'E-mail inválido'
 }
+
+const podeLogar = computed(() => {
+    return (
+        email.value.trim() !== '' &&
+        senha.value.trim() !== '' &&
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)
+    )
+})
 </script>
 
 <style scoped>
