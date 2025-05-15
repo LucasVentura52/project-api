@@ -10,9 +10,9 @@
             <v-form @submit.prevent="register" ref="formRef" v-model="valid">
                 <v-text-field v-model="email" label="Email" type="email" :rules="[rules.required, rules.email]"
                     prepend-inner-icon="mdi-email" variant="outlined" density="comfortable" />
-                <v-text-field v-model="senha" label="Senha" type="password" :rules="[rules.required]"
+                <v-text-field class="mt-2" v-model="senha" label="Senha" type="password" :rules="[rules.required]"
                     prepend-inner-icon="mdi-lock" variant="outlined" density="comfortable" />
-                <v-text-field v-model="senhaConfirmada" label="Confirmar Senha" type="password"
+                <v-text-field class="mt-2" v-model="senhaConfirmada" label="Confirmar Senha" type="password"
                     :rules="[rules.required, rules.confirmacao]" prepend-inner-icon="mdi-lock-check" variant="outlined"
                     density="comfortable" />
                 <v-btn :loading="loading" :disabled="loading" color="success" type="submit" block class="mt-4"
