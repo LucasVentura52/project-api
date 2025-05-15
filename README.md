@@ -9,12 +9,14 @@ Este projeto é uma aplicação web com login, cadastro e tela de boas-vindas, u
 - Redirecionamento com token e expiração
 - SweetAlert2 para mensagens visuais
 - Roteamento protegido e transições animadas
+- Comunicação com API via Axios
 
 ## Tecnologias
 
 - [Vue 3](https://vuejs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Vuetify](https://next.vuetifyjs.com/)
+- [Axios](https://axios-http.com/)
 - [SweetAlert2](https://sweetalert2.github.io/)
 - [Docker](https://www.docker.com/)
 
@@ -58,3 +60,9 @@ Depois, acesse [http://localhost:8080](http://localhost:8080)
 ## Autor
 
 Lucas Ventura
+
+
+## Contato
+
+- 📸 [Instagram](https://www.instagram.com/lucas_ventura__/)
+- 💼 [LinkedIn](https://www.linkedin.com/in/lucas-ventura-99984b281/)
